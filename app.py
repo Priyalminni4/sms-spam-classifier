@@ -44,12 +44,12 @@ input_sms = st.text_area("Enter the message")
 if st.button('Predict'):
     # 1. preprocess
     transformed_sms = transform_text(input_sms)
-    
+
     # 2. vectorize
     vector_input = tfidf.transform([transformed_sms])
 
     # 3. fit the model
-    model.fit(vector_input)
+    model.fit(vector_input, y_train)
 
     # 4. predict
     result = model.predict(vector_input)[0]
