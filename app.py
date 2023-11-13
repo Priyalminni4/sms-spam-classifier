@@ -48,13 +48,16 @@ if st.button('Predict'):
     # 2. vectorize
     vector_input = tfidf.transform([transformed_sms])
 
-    # 3. fit the model
+    # 3. define the target variable for the training data
+    y_train = [0, 1]
+
+    # 4. fit the model
     model.fit(vector_input, y_train)
 
-    # 4. predict
+    # 5. predict
     result = model.predict(vector_input)[0]
 
-    # 5. Display
+    # 6. Display
     if result == 1:
         st.header("Spam")
     else:
