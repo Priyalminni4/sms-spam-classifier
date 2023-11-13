@@ -47,18 +47,15 @@ if st.button('Predict'):
 
     # 2. vectorize
     vector_input = tfidf.transform([transformed_sms])
-
-    # 3. define the target variable for the training data
-    y_train = [0, 1]
-
-    # 4. fit the model
-    model.fit(vector_input, y_train)
-
-    # 5. predict
-    result = model.predict(vector_input)[0]
-
-    # 6. Display
-    if result == 1:
-        st.header("Spam")
+    
+    # Check if the model is fitted before making predictions
+    if hasattr(model, 'predict'):
+        # 3. predict
+        result = model.predict(vector_input)[0]
+        # 4. Display
+        if result == 1:
+            st.header("Spam")
+        else:
+            st.header("Not Spam")
     else:
-        st.header("Not Spam")
+        st.error("Model is not fitted yet. Please fit the model before making predictions.")
