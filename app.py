@@ -38,7 +38,7 @@ tfidf = pickle.load(open('vectorizer.pkl','rb'))
 model = pickle.load(open('model.pkl','rb'))
 
 # Set background color
-st.markdown("<style>body {background-color: #F0F0F0}</style>", unsafe_allow_html=True)
+st.markdown("<style>body {background-color: lavender}</style>", unsafe_allow_html=True)
 
 # Header and instructions
 st.header('SMS Spam Classifier')
@@ -69,6 +69,4 @@ if st.button('Predict'):
     else:
         st.error('Model is not fitted yet. Please fit the model before making predictions.')
 
-# Model details
-st.subheader('Model Details')
-st.write('Accuracy: 85%')
+
