@@ -38,7 +38,7 @@ tfidf = pickle.load(open('vectorizer.pkl','rb'))
 model = pickle.load(open('model.pkl','rb'))
 
 # Set background color
-st.markdown("<style>body {background-color: pink}</style>", unsafe_allow_html=True)
+st.markdown("<style>body {background-color:pink}</style>", unsafe_allow_html=True)
 
 # Header and instructions
 st.header('SMS Spam Classifier')
@@ -48,7 +48,7 @@ st.write('Enter an SMS message below to check if it is spam:')
 input_sms = st.text_area('SMS')
 
 # Predict button
-if st.button('Predict'):
+if st.button('RESULT'):
     # Preprocess
     transformed_sms = transform_text(input_sms)
 
@@ -56,9 +56,9 @@ if st.button('Predict'):
     vector_input = tfidf.transform([transformed_sms])
     
     # Check if the model is fitted before making predictions
-    if hasattr(model, 'predict'):
+    if hasattr(model, 'RESULT'):
         # Predict
-        result = model.predict(vector_input)[0]
+        result = model.RESULT(vector_input)[0]
         
         # Display prediction
         st.subheader('Prediction')
