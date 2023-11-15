@@ -38,7 +38,7 @@ tfidf = pickle.load(open('vectorizer.pkl','rb'))
 model = pickle.load(open('model.pkl','rb'))
 
 # Set background color
-st.markdown("<style>body {background-color: olive}</style>", unsafe_allow_html=True)
+st.markdown("<style>body {background-color: pink}</style>", unsafe_allow_html=True)
 
 # Header and instructions
 st.header('SMS Spam Classifier')
